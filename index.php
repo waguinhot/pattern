@@ -16,3 +16,5 @@ echo "Author: ".$post->getAuthor()." <br> Mensagem <p>".$post->getMessage()."</p
 
 // FINAL DO EXEMPLO DE simpleFactory
 
+// PARA USAR O ABSTRACT FACTORY CONSIDERE ENTRAR NA PASTA abstractFactory
+// provavelmente vai ser algo parecido http://localhost/pattern/abstractFactory
