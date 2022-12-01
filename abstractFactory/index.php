@@ -15,42 +15,30 @@
 // vamos fingir que eu fiz uma lógica absurda pra ver qual vai ser o gatway usado
 // 1 = flaypayment
 // 2 = spa payment
-$instance = rand(1,2);
+$instance = rand(1, 2);
 
-echo $instance ;
+echo $instance;
 
-$instacePayment ;
+$instacePayment;
 
-if($instance == 1)
-{
+if ($instance == 1) {
     require('./payment/methods/flaypayment/flaypaymentFactory.php');
     $instacePayment = new flaypaymentFactory();
 }
 
- if($instance == 2)
-{
- require('./payment/methods/spapayment/spapaymentFactory.php');
- $instacePayment = new spapaymentFactory();
+if ($instance == 2) {
+    require('./payment/methods/spapayment/spapaymentFactory.php');
+    $instacePayment = new spapaymentFactory();
 }
 
 
 
-$numpedido = rand(1,999);
+$numpedido = rand(1, 999);
 
-$novoPagamento = $instacePayment->Payment($numpedido , "Beltrano Alves Ciclano" , "95,90");
+$novoPagamento = $instacePayment->Payment($numpedido, "Beltrano Alves Ciclano", "95,90");
 
 echo "<hr>";
 $novoPagamento->pagar();
 echo "<hr>";
 
 $novoPagamento->validarPagamento($numpedido);
-
-
-
-
-
-
-
-
-
-
