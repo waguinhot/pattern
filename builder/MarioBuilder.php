@@ -1,7 +1,5 @@
 <?php
 
-require './BuilderInterface.php';
-require './Character.php';
 
 class MarioBuilder implements BuilderInterface {
     private $character;

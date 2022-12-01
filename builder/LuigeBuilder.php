@@ -1,7 +1,7 @@
 <?php
 
-require './BuilderInterface.php';
-require './Character.php';
+// require './BuilderInterface.php';
+
 
 class LuigeBuilder implements BuilderInterface {
     private $character;

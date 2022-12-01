@@ -3,30 +3,26 @@
 // normalmente utilizado para objetos muito grandes
 // como o proprio nome diz ele é um construtor de algo.... builder
 
-//infelizmente se eu chamar a interface em dois arquivos diferentes e juntar eles aqui
-// não vai rolar, então vamos de medida provisória
-
+require('BuilderInterface.php');
+require './Character.php';
 require('Director.php');
 
-$rand = rand(1,2);
+require('LuigeBuilder.php');
+require('MarioBuilder.php');
 
-// 1 = Mario
-
-// 2 = Luige
-
-$perso;
-
-if($rand == 1)
-{
-    require('MarioBuilder.php');
-    $perso = (new Director())->build(new MarioBuilder);
-}
-
-if($rand == 2)
-{
-    require('LuigeBuilder.php');
-    $perso = (new Director())->build(new LuigeBuilder);
-}
+    
+    $mario = (new Director())->build(new MarioBuilder);
 
 
-print_r($perso->getAllProperties());
+
+   
+    $luige = (new Director())->build(new LuigeBuilder);
+
+
+
+    echo "Mario: ";
+print_r($mario->getAllProperties());
+
+echo "<br> <br> <br>  Luige:  ";
+
+print_r($luige->getAllProperties());
